@@ -8,6 +8,7 @@ FROM node:12-alpine
 ENV USER node
 ENV WORKDIR /home/$USER/app
 WORKDIR $WORKDIR
+RUN echo test
 COPY --from=0 /usr/src/app/node_modules node_modules
 RUN chown $USER:$USER $WORKDIR
 COPY --chown=node . $WORKDIR
